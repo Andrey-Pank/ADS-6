@@ -1,6 +1,7 @@
 // Copyright 2022 NNTU-CS
 #ifndef INCLUDE_TPQUEUE_H_
 #define INCLUDE_TPQUEUE_H_
+#include <string>
 
 template<typename T, int size>
 class TPQueue {
@@ -17,8 +18,8 @@ class TPQueue {
         } else {
             bool flag = false;
             int step = last;
-            while(step != first){
-                if (element.prior > arr[(step - 1) % size].prior && step > first) {
+            while (step != first) {
+                if (el.prior > arr[(step - 1) % size].prior && step > first) {
                     arr[step % size] = arr[(step - 1) % size];
                     if (!flag) {
                         last++;
@@ -28,7 +29,7 @@ class TPQueue {
                     if (!flag) {
                         last++;
                     }
-                    arr[step % size] = element;
+                    arr[step % size] = el;
                     break;
                 }
                 step--;
