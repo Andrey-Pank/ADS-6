@@ -18,7 +18,7 @@ class TPQueue {
         } else {
             bool flag = false;
             int step = last;
-            while (step != first) {
+            for (; step >= first; --step) {
                 if (el.prior > arr[(step - 1) % size].prior && step > first) {
                     arr[step % size] = arr[(step - 1) % size];
                     if (!flag) {
@@ -32,7 +32,6 @@ class TPQueue {
                     arr[step % size] = el;
                     break;
                 }
-                step--;
             }
         }
     }
